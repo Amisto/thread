@@ -4,7 +4,7 @@
 #include <stdlib.h>
 #include <math.h>
 
-#define N 600
+#define N 4800
 #define N_LOGS 5
 #define XMIN 0.0
 #define XMAX 200.0          // mm
@@ -14,7 +14,7 @@
 const double DX = (XMAX - XMIN)/N;
 const double DM = RHO * DX; // S = 1 mm^2
 
-double DT = 0.25E-9;
+double DT = 0.25E-10;
 double strength = 1.0;
 
 int going, step;
@@ -145,7 +145,7 @@ int main(int argc, char** argv)
 
     for(strength = 1.005; strength < 1.1; strength += 0.01)
     {
-        printf("\nstarting with strength %lf", strength);
+        printf("starting with strength %lf\n", strength);
         init_chain();
         for (step = 0; ymax < 100.0; step++)
         {
