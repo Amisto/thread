@@ -31,13 +31,14 @@ for fpath in files:
         values.append([[float(x) for x in l.split()] for l in f.readlines()])
 
 values[0] = list(zip(*values[0]))
-
+colors = ['#FF0000', '#EE0000', '#DD0000', '#CC0000', '#BB0000', '#AA0000', '#990000', '#880000', '#770000', '#660000', '#550000', '#440000', '#330000', '#220000', '#E010FF', '#F000FF', '#00FF00', '#00DD00', '#00AA00', '#005500']
 for i,fl in enumerate(values):
+    plt.grid(True)
     if (i>0):
         for j,row in enumerate(fl):
-            plt.plot(row)
+            plt.plot(row, color=colors[j])
     else:
-        plt.plot(fl[1])
+        plt.scatter(fl[0], fl[1], color='r', marker='o')
     plt.savefig(files[i] + ".png")
     plt.clf()
 
