@@ -28,6 +28,7 @@ for f in args.files:
 with open(files[0]) as f:
     values = [[float(x) for x in l.split()] for l in f.readlines()]
 
+colors = ['r', 'g', 'b', 'c', '#00F0FF', '#30C0FF', '#6090FF', '#9060FF', '#C030FF', '#F000FF', '#FF0000', '#FF3030', '#FF6060', '#FF9090', '#FFC0C0', '#FFF0F0']
 plt.grid(True)
 for i,fl in enumerate(values):
     if (i > 0):
