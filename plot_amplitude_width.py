@@ -6,6 +6,7 @@ import png
 import csv
 import matplotlib
 matplotlib.use('Agg')
+matplotlib.rc('font', family='DejaVu Sans')
 import matplotlib.pyplot as plt
 
 
