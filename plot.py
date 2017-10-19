@@ -8,7 +8,6 @@ import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 
-
 parser = argparse.ArgumentParser(description=' ')
 
 parser.add_argument(
@@ -38,7 +37,13 @@ for i,fl in enumerate(values):
         for j,row in enumerate(fl):
             plt.plot(row, color=colors[j])
     else:
-        plt.scatter(fl[0], fl[1], color='r', marker='o')
+        axes = plt.gca()
+        axes.set_xlim([0, max(fl[0]) * 1.1])
+        axes.set_ylim([0, max(fl[1]) * 1.1])
+        plt.xlabel('Диаметр внутреннего ежа, мм')
+        plt.ylabel('Диаметр наружного ужа, мм')
+        plt.title('Зависимость ужа от ежа')
+        plt.plot(fl[0], fl[1], 'ok-')
     plt.savefig(files[i] + ".png")
     plt.clf()
 
